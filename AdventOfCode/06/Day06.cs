@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode
+﻿using System.Globalization;
+
+namespace AdventOfCode
 {
     public class Fish
     {
@@ -48,7 +50,15 @@
 
             for (int i = 0; i < 256; i++)
             {
-                fishAges[(i + 7) % 9] += fishAges[i % 9];
+                var fishesWithZero = fishAges[0];
+                
+                for (int k = 0; k < 8; k++)
+                {
+                    fishAges[k] = fishAges[k + 1];
+                }
+
+                fishAges[6] += fishesWithZero;
+                fishAges[8] = fishesWithZero;
             }
 
             Console.WriteLine($"Task #2: {fishAges.Sum()}");
