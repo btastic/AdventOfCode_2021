@@ -139,25 +139,25 @@
             Dictionary<char, char> mapping = new();
 
             List<Segment> segments = new();
-            mapping = CreateMapping(input.Select(x => x.Signals).First());
+            //mapping = CreateMapping(input.Select(x => x.Signals).First());
         }
 
-        private Dictionary<char, char> CreateMapping(string[] signals)
-        {
-            var one = signals.FirstOrDefault(x => x.Length == 2);
-            var four = signals.FirstOrDefault(x => x.Length == 4);
-            var seven = signals.FirstOrDefault(x => x.Length == 3);
-            var eight = signals.FirstOrDefault(x => x.Length == 7);
+        //private Dictionary<char, char> CreateMapping(string[] signals)
+        //{
+        //    var one = signals.FirstOrDefault(x => x.Length == 2);
+        //    var four = signals.FirstOrDefault(x => x.Length == 4);
+        //    var seven = signals.FirstOrDefault(x => x.Length == 3);
+        //    var eight = signals.FirstOrDefault(x => x.Length == 7);
 
-            var nine = signals.FirstOrDefault(x => x.Length == 6 && x.Except(seven).Except(four).Count() == 1);
-            var six = signals.FirstOrDefault(x => x.Length == 6 && x != nine && one.Except(x).Count() == 1);
-            var zero = signals.FirstOrDefault(x => x.Length == 6 && x != nine && x != six);
+        //    var nine = signals.FirstOrDefault(x => x.Length == 6 && x.Except(seven).Except(four).Count() == 1);
+        //    var six = signals.FirstOrDefault(x => x.Length == 6 && x != nine && one.Except(x).Count() == 1);
+        //    var zero = signals.FirstOrDefault(x => x.Length == 6 && x != nine && x != six);
 
-            var c = eight.Except(six).FirstOrDefault();
-            var e = eight.Except(nine).FirstOrDefault();
-            var f = eight.Except(one).Except(new[] { c }).FirstOrDefault();
+        //    var c = eight.Except(six).FirstOrDefault();
+        //    var e = eight.Except(nine).FirstOrDefault();
+        //    var f = eight.Except(one).Except(new[] { c }).FirstOrDefault();
 
-        }
+        //}
 
         private static async Task<List<InputLine>> ParseInputAsync()
         {
