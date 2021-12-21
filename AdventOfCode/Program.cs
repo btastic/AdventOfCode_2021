@@ -4,7 +4,7 @@
     {
         public static async Task Main()
         {
-            var day = new Day07();
+            var day = new Day09();
             await day.ExecuteAsync();
         }
     }
